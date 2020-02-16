@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book room</title>
+</head>
+<body style="background-color:#FFCC33;color:#000000;">
+<form method = 'POST' enctype="multipart/form-data">
+            {% csrf_token %}
+    <p>A user can book only once else the form will show as invalid</p>
+            <table class = 'w-50 table table-light' style="border-radius:10px;background-color:#FFFF99;">
+                {% for field in upload_form %}
+                <tr>
+                    <th>{{field.label}}</th>
+                    <td>{{ field }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            <button type="submit" class="btn btn-lg btn-warning">Submit</button>
+        </form>
+
+</body>
+</html>
